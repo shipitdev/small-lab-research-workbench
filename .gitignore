@@ -2,6 +2,7 @@ __pycache__/
 .env
 .env.*
 result*.json
+!evaluation/results/llmlingua-*/result.json
 .internal/
 .venv*/
 evaluation/live/
