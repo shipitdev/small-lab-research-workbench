@@ -90,7 +90,10 @@ def main():
             (out / f'{label}-{index}.json').write_text(json.dumps(row, indent=2))
             emit('inference', name=f'{label} / question {index}', seconds=round(seconds, 4),
                  usage=row['response']['usage'], provider_response_id=row['response'].get('provider_response_id'))
-        result = run_comparison(original, compressed, rows, args.model, key, ENDPOINT, observer=observe, max_tokens=4096)
+        def on_start(label, index, question):
+            emit('inference_start', name=f'{label} / question {index}', question=question)
+        result = run_comparison(original, compressed, rows, args.model, key, ENDPOINT,
+                                observer=observe, max_tokens=4096, on_start=on_start)
         result.update(method='Actual LLMLingua-2 CPU compression, synthetic RiverWatch application experiment',
                       compression=metadata, original_context=original, compressed_context=compressed)
         result['limitations'] = 'Method reproduction, not reproduction of published benchmark scores. Synthetic five-question dataset. Lexical recall is not semantic accuracy. One trial; caching and output length affect latency and cost. Compressor tokens differ from provider tokens.'

@@ -21,6 +21,13 @@ class EvidenceTest(unittest.TestCase):
             self.assertIsNone(result['runs'][0]['result'])
             self.assertEqual(result['runs'][0]['trace'][0]['kind'], 'workflow_start')
             self.assertNotIn('should-not-be-exported', json.dumps(result))
+            (directory / 'original-1.json').write_text(json.dumps({
+                'input': 'Question', 'response': {'text': 'A completed answer'}}))
+            partial = dashboard.snapshot(root)['runs'][0]
+            self.assertEqual(partial['calls'][0]['response']['text'], 'A completed answer')
+            self.assertEqual(partial['calls'][0]['context'], 'original')
+            self.assertEqual(partial['calls'][0]['question_index'], 1)
+            self.assertIsNone(partial['result'])
             (directory / 'result.json').write_text(json.dumps({'model': 'fixed-model'}))
             self.assertEqual(dashboard.snapshot(root)['runs'][0]['result']['model'], 'fixed-model')
 

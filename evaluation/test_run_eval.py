@@ -3,10 +3,22 @@ import json
 from unittest.mock import patch
 from email.message import Message
 
-from run_eval import _call, compression_metrics, score_answer, IncompleteResponse
+from run_eval import _call, compression_metrics, score_answer, IncompleteResponse, run_comparison
 
 
 class EvaluationMetricsTest(unittest.TestCase):
+    def test_start_event_precedes_call_and_completed_event_follows(self):
+        events = []
+        def fake_call(*args):
+            events.append('call')
+            return {'text': 'answer', 'usage': {'prompt_tokens': 10, 'completion_tokens': 2}, 'seconds': 1}
+        with patch('run_eval._call', side_effect=fake_call):
+            run_comparison('original', 'short', [{'input': 'question', 'ground_truth': 'answer'}],
+                'fixed', 'secret', 'endpoint',
+                on_start=lambda *args: events.append('start'),
+                observer=lambda *args: events.append('completed'))
+        self.assertEqual(events, ['start', 'call', 'completed', 'start', 'call', 'completed'])
+
     def test_request_provenance_excludes_credentials(self):
         import io
         response = io.BytesIO(json.dumps({"id": "response-1", "model": "fixed-model", "choices": [{"finish_reason": "stop", "message": {"content": "answer"}}], "usage": {"prompt_tokens": 10, "completion_tokens": 2}}).encode())

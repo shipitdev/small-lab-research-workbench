@@ -15,7 +15,14 @@ def snapshot(root):
         result = directory / 'result.json'
         trace = directory / 'trace.jsonl'
         harness = directory / 'opencode.jsonl'
+        calls = [dict(json.loads(file.read_text()), context=file.stem.rsplit('-', 1)[0],
+                      question_index=int(file.stem.rsplit('-', 1)[1]))
+                 for label in ('original', 'compressed')
+                 for file in sorted(directory.glob(label + '-[1-5].json'))]
+        compression = directory / 'compression.json'
         runs.append({'id': directory.name, 'result': json.loads(result.read_text()) if result.exists() else None,
+            'calls': calls,
+            'compression': json.loads(compression.read_text()) if compression.exists() else None,
             'trace': [json.loads(line) for line in trace.read_text().splitlines() if line.strip()] if trace.exists() else [],
             'harness': [json.loads(line) for line in harness.read_text().splitlines() if line.startswith('{')] if harness.exists() else []})
     platform = root / 'evaluation/results/digitalocean-observability.json'
