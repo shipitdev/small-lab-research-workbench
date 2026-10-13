@@ -40,7 +40,7 @@ router:general worked, so another router is unnecessary. Its name alone does not
 
 Docs: [Inference Router](https://docs.digitalocean.com/products/inference/how-to/use-inference-router/), [inference metrics](https://docs.digitalocean.com/products/inference/how-to/view-serverless-inference-metrics/), [Droplet billing](https://docs.digitalocean.com/products/droplets/details/pricing/).
 
-## 4. Run the open-source fixed-model comparison — next
+## 4. Run the open-source fixed-model comparison — complete for the first trial
 
 The exact model path `digitalocean/deepseek-v4.1-flash` has passed one short text-only OpenCode smoke test. That confirms access, not answer quality. The evaluator still needs a scoped model access key in its own process; never put the key in the repository or result JSON.
 
@@ -54,6 +54,8 @@ python3 evaluation/run_eval.py \
 ```
 
 The script makes ten bounded candidate calls, five for each archive, with up to 1,024 output tokens each so DeepSeek reasoning is not cut off. It refuses to overwrite an existing result. Review the raw answers and the recorded token usage before interpreting the reduction. Its lexical reference-marker score is a transparent proxy, not a semantic correctness claim.
+
+The first result is saved in [`evaluation/results/deepseek-v4.1-flash-20261013-retry.json`](evaluation/results/deepseek-v4.1-flash-20261013-retry.json), with the manual review in [`evaluation/results/REPORT.md`](evaluation/results/REPORT.md). It measured 28.33% fewer candidate prompt tokens. The compressed run used more completion tokens and was slightly slower in this single trial, so total cost savings remain unproved.
 
 ## 5. Optional native evaluation — after the local result
 
