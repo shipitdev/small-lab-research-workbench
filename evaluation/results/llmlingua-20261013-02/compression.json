@@ -1,0 +1,29 @@
+{
+  "algorithm": "LLMLingua-2",
+  "checkpoint": "microsoft/llmlingua-2-bert-base-multilingual-cased-meetingbank",
+  "checkpoint_revision": "5f0c82792b7ea14c6484e015b6a072009496b7f2",
+  "packages": {
+    "llmlingua": "0.2.2",
+    "transformers": "4.44.2",
+    "torch": "2.14.1+cpu"
+  },
+  "device": "cpu",
+  "rate": 0.5,
+  "force_tokens": [
+    "\n"
+  ],
+  "drop_consecutive": true,
+  "load_seconds": 10.3429,
+  "compression_seconds": 1.8289,
+  "upstream_output": {
+    "compressed_prompt": "SYNTHETIC HACKATHON DATA study sensor performance \n RiverWatch Lab comparison two low - cost turbidity sensors \n Record version 2026 - 10 - 13 archive concerns research group testing sensors field study. \n tested Sensor A B against meter 48 water samples 24 low below 20 NTU 24 high 20 through 100 NTU one reading per used absolute error NTU not percentage drinking - water safety pathogens chemical contamination. \n notebook 2026 - 10 - 04 \n Sensor B lower error B field pilot every reading during - recommendation provisional \n Quality - control correction 2026 - 10 - 07 \n eight samples measured before excluded 40 samples 20 low - 20 high - correction supersedes recommendation comparison excluded readings remain raw archive. \n results \n Sensor A error 3. 1 NTU B 4. 0 NTU low - turbidity A error 1. 2 NTU B 0. 9 NTU high - turbidity A error 5. 0 NTU B 7. 1 NTU. aggregate values arithmetic means low high groups. measurements describe bench sample only. No confidence intervals statistical significance tests calculated. \nDecision memo 2026 - 10 - 09 \n pilot team prefers Sensor A error lower pilot restricted water below 20 NTU Sensor B preferable accuracy recommendation above 100 NTU collected no samples recommendation disclose warm - up issue \n pilot requires ten - minute warm - up measurement Sensor A draws 60 mA B 45 mA measurement - mode currents not battery - life estimates archive no battery capacity duty cycle sleep current operating voltage radio power measurements calculate deployment battery life \n proposed field phase samples three sites two weeks receive permission before deployment draft purchasing note 20 October final purchasing deadline 23 October permissions 18 October defer purchasing until revised schedule approved \n Research limitations \n samples prepared bench Temperature effects fouling sensor drift field reliability not measured sensor reliable continuous unattended deployment verify corrected analysis identify missing measurements decide field pilot \n",
+    "compressed_prompt_list": [
+      "SYNTHETIC HACKATHON DATA study sensor performance \n RiverWatch Lab comparison two low - cost turbidity sensors \n Record version 2026 - 10 - 13 archive concerns research group testing sensors field study. \n tested Sensor A B against meter 48 water samples 24 low below 20 NTU 24 high 20 through 100 NTU one reading per used absolute error NTU not percentage drinking - water safety pathogens chemical contamination. \n notebook 2026 - 10 - 04 \n Sensor B lower error B field pilot every reading during - recommendation provisional \n Quality - control correction 2026 - 10 - 07 \n eight samples measured before excluded 40 samples 20 low - 20 high - correction supersedes recommendation comparison excluded readings remain raw archive. \n results \n Sensor A error 3. 1 NTU B 4. 0 NTU low - turbidity A error 1. 2 NTU B 0. 9 NTU high - turbidity A error 5. 0 NTU B 7. 1 NTU. aggregate values arithmetic means low high groups. measurements describe bench sample only. No confidence intervals statistical significance tests calculated. \nDecision memo 2026 - 10 - 09 \n pilot team prefers Sensor A error lower pilot restricted water below 20 NTU Sensor B preferable accuracy recommendation above 100 NTU collected no samples recommendation disclose warm - up issue \n pilot requires ten - minute warm - up measurement Sensor A draws 60 mA B 45 mA measurement - mode currents not battery - life estimates archive no battery capacity duty cycle sleep current operating voltage radio power measurements calculate deployment battery life \n proposed field phase samples three sites two weeks receive permission before deployment draft purchasing note 20 October final purchasing deadline 23 October permissions 18 October defer purchasing until revised schedule approved \n Research limitations \n samples prepared bench Temperature effects fouling sensor drift field reliability not measured sensor reliable continuous unattended deployment verify corrected analysis identify missing measurements decide field pilot \n"
+    ],
+    "origin_tokens": 772,
+    "compressed_tokens": 407,
+    "ratio": "1.9x",
+    "rate": "52.7%",
+    "saving": ", Saving $0.0 in GPT-4."
+  }
+}

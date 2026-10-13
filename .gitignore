@@ -3,3 +3,5 @@ __pycache__/
 .env.*
 result*.json
 .internal/
+.venv*/
+evaluation/live/
