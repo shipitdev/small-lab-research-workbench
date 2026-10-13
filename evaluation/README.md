@@ -15,7 +15,7 @@ python3 evaluation/run_eval.py \
   --output evaluation/results/deepseek-flash-$(date +%Y%m%d-%H%M%S).json
 ```
 
-The script makes ten candidate calls: five questions against each context. It uses temperature 0 and refuses to overwrite an existing result. Keep the output JSON with the model ID and settings.
+The script makes ten candidate calls: five questions against each context. It uses temperature 0, allows up to 1,024 output tokens so reasoning models are not truncated, and refuses to overwrite an existing result. Keep the output JSON with the model ID and settings.
 
 ## What it measures
 
@@ -25,3 +25,5 @@ The script makes ten candidate calls: five questions against each context. It us
 - A transparent lexical reference-marker recall and `Not found` alignment check.
 
 The lexical score is a debugging signal, not a semantic accuracy score. Review the answers manually and use DigitalOcean's native Evaluations as optional judge evidence. The compression method remains model-generated and LLMLingua-inspired; it is not the LLMLingua implementation.
+
+The first completed run is summarized in [REPORT.md](results/REPORT.md), with raw outputs in `results/deepseek-v4.1-flash-20261013-retry.json`.

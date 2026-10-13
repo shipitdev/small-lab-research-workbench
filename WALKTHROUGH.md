@@ -24,10 +24,11 @@ A fictional lab compares two water sensors. Its notebook contains an early recom
 5. The agent created compressed.txt and compression-notes.md.
 6. Switched from the browser console to SSH. SSH now works. OpenCode lives at /root/.opencode/bin/opencode, so remote commands should use that full path.
 7. Ran one short text-only request through `digitalocean/deepseek-v4.1-flash`; it returned the expected response. This verifies model access, not research quality.
+8. Ran the fixed-model evaluator against all five questions for both archives. It measured 4,359 versus 3,124 candidate prompt tokens: 28.33% fewer tokens for the compressed archive. We manually reviewed the answers; the compressed answer to the low-turbidity question kept the decision but omitted supporting numbers. The full evidence report is in `evaluation/results/REPORT.md`.
 
 ## Where we are now
 
-The original matches the prepared source exactly. The compressed document is 2,177 bytes versus 3,743 bytes: 41.84% smaller in bytes. That is not a measured token or cost saving. It retains the important measurements and purchasing conditions, but drops the record date and initial-entry date. Its notes wrongly call the record date invented; that date really exists in the source. We preserved this first run and recorded the limitation. Native evaluations have not run yet.
+The original matches the prepared source exactly. The compressed document is 2,177 bytes versus 3,743 bytes: 41.84% smaller in bytes. The fixed DeepSeek comparison measured 28.33% fewer candidate prompt tokens, but the compressed run used more completion tokens and was slightly slower in this single trial. It retains the important measurements and purchasing conditions, but drops the record date and initial-entry date. Its notes wrongly call the record date invented; that date really exists in the source. We preserved this first run and recorded the limitation. Native evaluations have not run yet.
 
 ## What is now ready
 
@@ -35,13 +36,13 @@ The original matches the prepared source exactly. The compressed document is 2,1
 
 ## What comes next
 
-Pass a scoped model key to the evaluator process without saving it → run the same five questions against each archive → inspect the JSON and raw answers → optionally compare in native Evaluations → explain what was preserved or lost and what the calls actually cost.
+Verify the account's actual usage and price → optionally compare in native Evaluations → decide whether a stronger semantic judge is needed → explain what was preserved or lost and what the calls actually cost.
 
 ## What we can honestly pitch today
 
-“Our cloud agent is connected and can work with files. It has prepared a first compressed research archive. We checked the source integrity and reviewed the archive, recording what it lost. Evaluation is next.”
+“Our cloud agent is connected and can work with files. It prepared a compressed research archive and ran a fixed DeepSeek comparison. The shorter archive used 28.33% fewer candidate prompt tokens, while manual review exposed the evidence detail it dropped.”
 
-This is a Droplet prototype: we still manage the server. The study is fictional. We have not proved token savings, lower total cost or equal answer quality.
+This is a Droplet prototype: we still manage the server. The study is fictional. We have not proved lower total cost or equal answer quality, and the metric proxy is not a semantic judge.
 
 Update this file after each verified milestone. Keep planned steps and observed results separate.
 

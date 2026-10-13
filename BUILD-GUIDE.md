@@ -53,7 +53,7 @@ python3 evaluation/run_eval.py \
   --output evaluation/results/deepseek-comparison.json
 ```
 
-The script makes ten bounded candidate calls, five for each archive. It refuses to overwrite an existing result. Review the raw answers and the recorded token usage before interpreting the reduction. Its lexical reference-marker score is a transparent proxy, not a semantic correctness claim.
+The script makes ten bounded candidate calls, five for each archive, with up to 1,024 output tokens each so DeepSeek reasoning is not cut off. It refuses to overwrite an existing result. Review the raw answers and the recorded token usage before interpreting the reduction. Its lexical reference-marker score is a transparent proxy, not a semantic correctness claim.
 
 ## 5. Optional native evaluation — after the local result
 

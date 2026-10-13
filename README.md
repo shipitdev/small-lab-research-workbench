@@ -8,9 +8,9 @@ These documents are on your local Mac. No SSH is needed to read them.
 - [Open-source evaluator](evaluation/README.md): how the fixed-model comparison runs.
 - [Recovered cloud outputs](cloud-artifacts/): original, compressed document, raw agent notes and manifest.
 
-Current setup: OpenCode 1.18.27 runs on our DigitalOcean Droplet and calls serverless inference through router:general for operational work. The repository now also has a fixed-model evaluator for DeepSeek or another catalog model. SSH and agent file tools work. The original source matches our local input exactly. The first compressed document is 41.84% smaller in bytes, with date omissions recorded in the manifest. No paid benchmark has run; token, cost and answer-quality results remain unknown.
+Current setup: OpenCode 1.18.27 runs on our DigitalOcean Droplet and calls serverless inference through router:general for operational work. The repository now also has a fixed-model evaluator for DeepSeek or another catalog model. SSH and agent file tools work. The first compressed document is 41.84% smaller in bytes. One bounded DeepSeek comparison measured 28.33% fewer candidate prompt tokens; manual review and limitations are recorded in `evaluation/results/REPORT.md`.
 
-Next: confirm the exact DeepSeek model slug and key scope, run one bounded fixed-model comparison, inspect its JSON, then optionally use DigitalOcean native Evaluations for a second judge view. The walkthrough and checklist are the current progress records.
+Next: verify account usage and pricing, optionally run DigitalOcean native Evaluations for a second judge view, and decide whether the workflow needs a stronger semantic metric before presenting it.
 
 ## Earlier local practice runner
 

@@ -41,7 +41,7 @@ def score_answer(answer, reference):
         "reference_marker_recall": round(reference_marker_recall, 4),
         "reference_markers_required": sorted(required),
         "reference_markers_present": present,
-        "not_found_alignment": int(not expects_not_found or gives_not_found),
+        "not_found_alignment": None if not expects_not_found else int(gives_not_found),
     }
 
 
@@ -114,7 +114,7 @@ def run_comparison(original, compressed, rows, model, key, endpoint):
     results = {"original": [], "compressed": []}
     for label, context in (("original", original), ("compressed", compressed)):
         for row in rows:
-            response = _call(endpoint, key, model, system, json.dumps({"archive": context, "question": row["input"]}), 256)
+            response = _call(endpoint, key, model, system, json.dumps({"archive": context, "question": row["input"]}), 1024)
             results[label].append({
                 "input": row["input"],
                 "ground_truth": row["ground_truth"],
@@ -127,7 +127,7 @@ def run_comparison(original, compressed, rows, model, key, endpoint):
         "model": model,
         "endpoint": endpoint,
         "method": "model-generated compression (LLMLingua-inspired, not LLMLingua)",
-        "settings": {"temperature": 0, "max_tokens": 256, "rows": len(rows)},
+        "settings": {"temperature": 0, "max_tokens": 1024, "rows": len(rows)},
         "source_bytes": {"original": len(original.encode()), "compressed": len(compressed.encode())},
         "prompt_metrics": compression_metrics(original_tokens, compressed_tokens),
         "runs": results,

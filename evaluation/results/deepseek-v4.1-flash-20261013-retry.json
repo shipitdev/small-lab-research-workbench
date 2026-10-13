@@ -1,0 +1,737 @@
+{
+  "model": "deepseek-v4.1-flash",
+  "endpoint": "https://inference.do-ai.run/v1/chat/completions",
+  "method": "model-generated compression (LLMLingua-inspired, not LLMLingua)",
+  "settings": {
+    "temperature": 0,
+    "max_tokens": 1024,
+    "rows": 5
+  },
+  "source_bytes": {
+    "original": 3743,
+    "compressed": 2177
+  },
+  "prompt_metrics": {
+    "original_prompt_tokens": 4359,
+    "compressed_prompt_tokens": 3124,
+    "prompt_token_reduction": 1235,
+    "prompt_token_reduction_ratio": 0.2833
+  },
+  "runs": {
+    "original": [
+      {
+        "input": "How many paired samples remain after quality control, and why were the others removed?",
+        "ground_truth": "40 paired samples remain. Eight of the original 48 were excluded because both sensors were measured before the ten-minute warm-up had elapsed. The retained samples comprise 20 low-turbidity and 20 high-turbidity samples.",
+        "response": {
+          "text": "40 paired samples remain: 20 low-turbidity and 20 high-turbidity. Eight samples were removed because both sensors had been measured before the required ten-minute warm-up had elapsed.",
+          "usage": {
+            "cache_created_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_read_input_tokens": 832,
+            "completion_tokens": 137,
+            "completion_tokens_details": {
+              "reasoning_tokens": 96
+            },
+            "prompt_tokens": 873,
+            "prompt_tokens_details": {
+              "cached_tokens": 832
+            },
+            "speed": null,
+            "total_tokens": 1010
+          },
+          "seconds": 2.27
+        },
+        "metrics": {
+          "reference_marker_recall": 0.7619,
+          "reference_markers_required": [
+            "20",
+            "40",
+            "48",
+            "before",
+            "both",
+            "comprise",
+            "eight",
+            "elapsed",
+            "excluded",
+            "had",
+            "high-turbidity",
+            "low-turbidity",
+            "measured",
+            "original",
+            "paired",
+            "remain",
+            "retained",
+            "samples",
+            "sensors",
+            "ten-minute",
+            "warm-up"
+          ],
+          "reference_markers_present": [
+            "20",
+            "40",
+            "before",
+            "both",
+            "eight",
+            "elapsed",
+            "had",
+            "high-turbidity",
+            "low-turbidity",
+            "measured",
+            "paired",
+            "remain",
+            "samples",
+            "sensors",
+            "ten-minute",
+            "warm-up"
+          ],
+          "not_found_alignment": null
+        }
+      },
+      {
+        "input": "Which sensor is preferred overall after correction, and what are the error values and units?",
+        "ground_truth": "Sensor A is preferred for a general pilot spanning the tested range. Its corrected mean absolute error is 3.1 NTU, compared with Sensor B's 4.0 NTU, across the 40 retained paired samples. The initial provisional preference for B used warm-up readings and was superseded.",
+        "response": {
+          "text": "After correction, Sensor A is preferred overall. Its corrected mean absolute error was **3.1 NTU**, compared with Sensor B\u2019s **4.0 NTU**.",
+          "usage": {
+            "cache_created_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_read_input_tokens": 832,
+            "completion_tokens": 162,
+            "completion_tokens_details": {
+              "reasoning_tokens": 125
+            },
+            "prompt_tokens": 874,
+            "prompt_tokens_details": {
+              "cached_tokens": 832
+            },
+            "speed": null,
+            "total_tokens": 1036
+          },
+          "seconds": 2.6076
+        },
+        "metrics": {
+          "reference_marker_recall": 0.3462,
+          "reference_markers_required": [
+            "3.1",
+            "4.0",
+            "40",
+            "absolute",
+            "across",
+            "corrected",
+            "error",
+            "general",
+            "initial",
+            "mean",
+            "ntu",
+            "paired",
+            "pilot",
+            "preference",
+            "preferred",
+            "provisional",
+            "range",
+            "readings",
+            "retained",
+            "samples",
+            "sensor",
+            "spanning",
+            "superseded",
+            "tested",
+            "used",
+            "warm-up"
+          ],
+          "reference_markers_present": [
+            "3.1",
+            "4.0",
+            "absolute",
+            "corrected",
+            "error",
+            "mean",
+            "ntu",
+            "preferred",
+            "sensor"
+          ],
+          "not_found_alignment": null
+        }
+      },
+      {
+        "input": "Does the overall recommendation also apply to water below 20 NTU?",
+        "ground_truth": "Not necessarily. Below 20 NTU, Sensor B has the lower mean absolute error, 0.9 NTU versus Sensor A's 1.2 NTU, so B may be preferable for a pilot restricted to that subgroup. Above or equal to 20 and up to 100 NTU, A's error is 5.0 NTU versus B's 7.1 NTU.",
+        "response": {
+          "text": "No. The corrected overall recommendation prefers Sensor A for a general pilot spanning the tested range, but for water below 20 NTU, Sensor B may still be preferable on accuracy. In the low-turbidity group, Sensor A\u2019s mean absolute error was 1.2 NTU and Sensor B\u2019s was 0.9 NTU.",
+          "usage": {
+            "cache_created_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_read_input_tokens": 832,
+            "completion_tokens": 205,
+            "completion_tokens_details": {
+              "reasoning_tokens": 132
+            },
+            "prompt_tokens": 871,
+            "prompt_tokens_details": {
+              "cached_tokens": 832
+            },
+            "speed": null,
+            "total_tokens": 1076
+          },
+          "seconds": 2.7689
+        },
+        "metrics": {
+          "reference_marker_recall": 0.48,
+          "reference_markers_required": [
+            "0.9",
+            "1.2",
+            "100",
+            "20",
+            "5.0",
+            "7.1",
+            "above",
+            "absolute",
+            "below",
+            "equal",
+            "error",
+            "lower",
+            "may",
+            "mean",
+            "necessarily",
+            "not",
+            "ntu",
+            "pilot",
+            "preferable",
+            "restricted",
+            "sensor",
+            "so",
+            "subgroup",
+            "up",
+            "versus"
+          ],
+          "reference_markers_present": [
+            "0.9",
+            "1.2",
+            "20",
+            "absolute",
+            "below",
+            "error",
+            "may",
+            "mean",
+            "ntu",
+            "pilot",
+            "preferable",
+            "sensor"
+          ],
+          "not_found_alignment": null
+        }
+      },
+      {
+        "input": "What is the final purchasing deadline, and what condition could defer it?",
+        "ground_truth": "The later memo sets 23 October as the final deadline, conditional on receiving all site permissions by 18 October. Later permission requires purchasing to be deferred until a revised schedule is approved. The draft 20 October date is superseded.",
+        "response": {
+          "text": "The final purchasing deadline is **23 October**, conditional on receiving **all site permissions by 18 October**. If permission arrives later, purchasing is deferred until a revised schedule is approved.",
+          "usage": {
+            "cache_created_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_read_input_tokens": 832,
+            "completion_tokens": 131,
+            "completion_tokens_details": {
+              "reasoning_tokens": 93
+            },
+            "prompt_tokens": 871,
+            "prompt_tokens_details": {
+              "cached_tokens": 832
+            },
+            "speed": null,
+            "total_tokens": 1002
+          },
+          "seconds": 2.9589
+        },
+        "metrics": {
+          "reference_marker_recall": 0.72,
+          "reference_markers_required": [
+            "18",
+            "20",
+            "23",
+            "all",
+            "approved",
+            "conditional",
+            "date",
+            "deadline",
+            "deferred",
+            "draft",
+            "final",
+            "later",
+            "memo",
+            "october",
+            "permission",
+            "permissions",
+            "purchasing",
+            "receiving",
+            "requires",
+            "revised",
+            "schedule",
+            "sets",
+            "site",
+            "superseded",
+            "until"
+          ],
+          "reference_markers_present": [
+            "18",
+            "23",
+            "all",
+            "approved",
+            "conditional",
+            "deadline",
+            "deferred",
+            "final",
+            "later",
+            "october",
+            "permission",
+            "permissions",
+            "purchasing",
+            "receiving",
+            "revised",
+            "schedule",
+            "site",
+            "until"
+          ],
+          "not_found_alignment": null
+        }
+      },
+      {
+        "input": "How long will Sensor B's battery last during unattended deployment?",
+        "ground_truth": "Not found / cannot be calculated from this archive. The 45 mA figure is only measurement-mode current. Battery capacity, duty cycle, sleep current, voltage and radio power are missing, and continuous unattended field reliability was not tested.",
+        "response": {
+          "text": "Not found. The archive does not contain battery capacity, duty cycle, sleep current, operating voltage, or radio power measurements, so Sensor B\u2019s deployment battery life cannot be calculated from it.",
+          "usage": {
+            "cache_created_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_read_input_tokens": 832,
+            "completion_tokens": 100,
+            "completion_tokens_details": {
+              "reasoning_tokens": 59
+            },
+            "prompt_tokens": 870,
+            "prompt_tokens_details": {
+              "cached_tokens": 832
+            },
+            "speed": null,
+            "total_tokens": 970
+          },
+          "seconds": 1.7287
+        },
+        "metrics": {
+          "reference_marker_recall": 0.56,
+          "reference_markers_required": [
+            "45",
+            "archive",
+            "battery",
+            "calculated",
+            "cannot",
+            "capacity",
+            "continuous",
+            "current",
+            "cycle",
+            "duty",
+            "field",
+            "figure",
+            "found",
+            "ma",
+            "measurement-mode",
+            "missing",
+            "not",
+            "only",
+            "power",
+            "radio",
+            "reliability",
+            "sleep",
+            "tested",
+            "unattended",
+            "voltage"
+          ],
+          "reference_markers_present": [
+            "archive",
+            "battery",
+            "calculated",
+            "cannot",
+            "capacity",
+            "current",
+            "cycle",
+            "duty",
+            "found",
+            "not",
+            "power",
+            "radio",
+            "sleep",
+            "voltage"
+          ],
+          "not_found_alignment": 1
+        }
+      }
+    ],
+    "compressed": [
+      {
+        "input": "How many paired samples remain after quality control, and why were the others removed?",
+        "ground_truth": "40 paired samples remain. Eight of the original 48 were excluded because both sensors were measured before the ten-minute warm-up had elapsed. The retained samples comprise 20 low-turbidity and 20 high-turbidity samples.",
+        "response": {
+          "text": "40 paired samples remain (20 low, 20 high). The other 8 samples were removed because both sensors were read before the 10-minute warm-up elapsed.",
+          "usage": {
+            "cache_created_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_read_input_tokens": 576,
+            "completion_tokens": 116,
+            "completion_tokens_details": {
+              "reasoning_tokens": 81
+            },
+            "prompt_tokens": 626,
+            "prompt_tokens_details": {
+              "cached_tokens": 576
+            },
+            "speed": null,
+            "total_tokens": 742
+          },
+          "seconds": 2.015
+        },
+        "metrics": {
+          "reference_marker_recall": 0.4762,
+          "reference_markers_required": [
+            "20",
+            "40",
+            "48",
+            "before",
+            "both",
+            "comprise",
+            "eight",
+            "elapsed",
+            "excluded",
+            "had",
+            "high-turbidity",
+            "low-turbidity",
+            "measured",
+            "original",
+            "paired",
+            "remain",
+            "retained",
+            "samples",
+            "sensors",
+            "ten-minute",
+            "warm-up"
+          ],
+          "reference_markers_present": [
+            "20",
+            "40",
+            "before",
+            "both",
+            "elapsed",
+            "paired",
+            "remain",
+            "samples",
+            "sensors",
+            "warm-up"
+          ],
+          "not_found_alignment": null
+        }
+      },
+      {
+        "input": "Which sensor is preferred overall after correction, and what are the error values and units?",
+        "ground_truth": "Sensor A is preferred for a general pilot spanning the tested range. Its corrected mean absolute error is 3.1 NTU, compared with Sensor B's 4.0 NTU, across the 40 retained paired samples. The initial provisional preference for B used warm-up readings and was superseded.",
+        "response": {
+          "text": "After correction, **Sensor A is preferred overall** over the tested range, because it has lower corrected overall mean absolute error.\n\nCorrected overall mean absolute error:  \n- **Sensor A: 3.1 NTU**  \n- **Sensor B: 4.0 NTU**\n\nUnits are **NTU** (absolute error in NTU).",
+          "usage": {
+            "cache_created_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_read_input_tokens": 576,
+            "completion_tokens": 224,
+            "completion_tokens_details": {
+              "reasoning_tokens": 151
+            },
+            "prompt_tokens": 627,
+            "prompt_tokens_details": {
+              "cached_tokens": 576
+            },
+            "speed": null,
+            "total_tokens": 851
+          },
+          "seconds": 3.338
+        },
+        "metrics": {
+          "reference_marker_recall": 0.4231,
+          "reference_markers_required": [
+            "3.1",
+            "4.0",
+            "40",
+            "absolute",
+            "across",
+            "corrected",
+            "error",
+            "general",
+            "initial",
+            "mean",
+            "ntu",
+            "paired",
+            "pilot",
+            "preference",
+            "preferred",
+            "provisional",
+            "range",
+            "readings",
+            "retained",
+            "samples",
+            "sensor",
+            "spanning",
+            "superseded",
+            "tested",
+            "used",
+            "warm-up"
+          ],
+          "reference_markers_present": [
+            "3.1",
+            "4.0",
+            "absolute",
+            "corrected",
+            "error",
+            "mean",
+            "ntu",
+            "preferred",
+            "range",
+            "sensor",
+            "tested"
+          ],
+          "not_found_alignment": null
+        }
+      },
+      {
+        "input": "Does the overall recommendation also apply to water below 20 NTU?",
+        "ground_truth": "Not necessarily. Below 20 NTU, Sensor B has the lower mean absolute error, 0.9 NTU versus Sensor A's 1.2 NTU, so B may be preferable for a pilot restricted to that subgroup. Above or equal to 20 and up to 100 NTU, A's error is 5.0 NTU versus B's 7.1 NTU.",
+        "response": {
+          "text": "No. The overall corrected recommendation prefers A over the tested range, but for pilot <20 NTU only, B may be preferable.",
+          "usage": {
+            "cache_created_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_read_input_tokens": 576,
+            "completion_tokens": 137,
+            "completion_tokens_details": {
+              "reasoning_tokens": 108
+            },
+            "prompt_tokens": 624,
+            "prompt_tokens_details": {
+              "cached_tokens": 576
+            },
+            "speed": null,
+            "total_tokens": 761
+          },
+          "seconds": 2.4518
+        },
+        "metrics": {
+          "reference_marker_recall": 0.2,
+          "reference_markers_required": [
+            "0.9",
+            "1.2",
+            "100",
+            "20",
+            "5.0",
+            "7.1",
+            "above",
+            "absolute",
+            "below",
+            "equal",
+            "error",
+            "lower",
+            "may",
+            "mean",
+            "necessarily",
+            "not",
+            "ntu",
+            "pilot",
+            "preferable",
+            "restricted",
+            "sensor",
+            "so",
+            "subgroup",
+            "up",
+            "versus"
+          ],
+          "reference_markers_present": [
+            "20",
+            "may",
+            "ntu",
+            "pilot",
+            "preferable"
+          ],
+          "not_found_alignment": null
+        }
+      },
+      {
+        "input": "What is the final purchasing deadline, and what condition could defer it?",
+        "ground_truth": "The later memo sets 23 October as the final deadline, conditional on receiving all site permissions by 18 October. Later permission requires purchasing to be deferred until a revised schedule is approved. The draft 20 October date is superseded.",
+        "response": {
+          "text": "Final purchasing deadline: **23-Oct**. It is conditional on **all site permissions by 18-Oct**. A **later permission** defers purchasing until a **revised schedule is approved**.",
+          "usage": {
+            "cache_created_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_read_input_tokens": 576,
+            "completion_tokens": 212,
+            "completion_tokens_details": {
+              "reasoning_tokens": 170
+            },
+            "prompt_tokens": 624,
+            "prompt_tokens_details": {
+              "cached_tokens": 576
+            },
+            "speed": null,
+            "total_tokens": 836
+          },
+          "seconds": 3.2855
+        },
+        "metrics": {
+          "reference_marker_recall": 0.6,
+          "reference_markers_required": [
+            "18",
+            "20",
+            "23",
+            "all",
+            "approved",
+            "conditional",
+            "date",
+            "deadline",
+            "deferred",
+            "draft",
+            "final",
+            "later",
+            "memo",
+            "october",
+            "permission",
+            "permissions",
+            "purchasing",
+            "receiving",
+            "requires",
+            "revised",
+            "schedule",
+            "sets",
+            "site",
+            "superseded",
+            "until"
+          ],
+          "reference_markers_present": [
+            "18",
+            "23",
+            "all",
+            "approved",
+            "conditional",
+            "deadline",
+            "final",
+            "later",
+            "permission",
+            "permissions",
+            "purchasing",
+            "revised",
+            "schedule",
+            "site",
+            "until"
+          ],
+          "not_found_alignment": null
+        }
+      },
+      {
+        "input": "How long will Sensor B's battery last during unattended deployment?",
+        "ground_truth": "Not found / cannot be calculated from this archive. The 45 mA figure is only measurement-mode current. Battery capacity, duty cycle, sleep current, voltage and radio power are missing, and continuous unattended field reliability was not tested.",
+        "response": {
+          "text": "Not found. The archive states that total deployment battery life cannot be computed: battery capacity, duty cycle, sleep current, operating voltage, and radio power are missing. Sensor B\u2019s 45 mA measuring current is not a battery-life estimate.",
+          "usage": {
+            "cache_created_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_read_input_tokens": 576,
+            "completion_tokens": 125,
+            "completion_tokens_details": {
+              "reasoning_tokens": 74
+            },
+            "prompt_tokens": 623,
+            "prompt_tokens_details": {
+              "cached_tokens": 576
+            },
+            "speed": null,
+            "total_tokens": 748
+          },
+          "seconds": 1.959
+        },
+        "metrics": {
+          "reference_marker_recall": 0.64,
+          "reference_markers_required": [
+            "45",
+            "archive",
+            "battery",
+            "calculated",
+            "cannot",
+            "capacity",
+            "continuous",
+            "current",
+            "cycle",
+            "duty",
+            "field",
+            "figure",
+            "found",
+            "ma",
+            "measurement-mode",
+            "missing",
+            "not",
+            "only",
+            "power",
+            "radio",
+            "reliability",
+            "sleep",
+            "tested",
+            "unattended",
+            "voltage"
+          ],
+          "reference_markers_present": [
+            "45",
+            "archive",
+            "battery",
+            "cannot",
+            "capacity",
+            "current",
+            "cycle",
+            "duty",
+            "found",
+            "ma",
+            "missing",
+            "not",
+            "power",
+            "radio",
+            "sleep",
+            "voltage"
+          ],
+          "not_found_alignment": 1
+        }
+      }
+    ]
+  },
+  "limitations": "Lexical marker recall is a transparent proxy, not semantic correctness. Review answers manually and use native DigitalOcean Evaluations as optional judge evidence."
+}
