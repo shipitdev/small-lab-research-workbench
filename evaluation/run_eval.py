@@ -8,6 +8,8 @@ judge.
 
 import argparse
 import getpass
+import hashlib
+from datetime import datetime, timezone
 import json
 import os
 import re
@@ -90,8 +92,10 @@ def _call(endpoint, key, model, system, prompt, max_tokens):
         headers={"Authorization": "Bearer " + key, "Content-Type": "application/json"},
     )
     started = time.perf_counter()
+    submitted_at = datetime.now(timezone.utc).isoformat()
     try:
         with request.urlopen(req, timeout=90) as response:
+            request_id = response.headers.get("x-request-id")
             payload = json.load(response)
     except error.HTTPError as exc:
         raise RuntimeError(f"DigitalOcean returned HTTP {exc.code}; check model access, balance and model ID.") from None
@@ -106,6 +110,12 @@ def _call(endpoint, key, model, system, prompt, max_tokens):
         "text": content,
         "usage": usage,
         "seconds": round(time.perf_counter() - started, 4),
+        "submitted_at_utc": submitted_at,
+        "request": body,
+        "provider_response_id": payload.get("id"),
+        "provider_request_id": request_id,
+        "provider_model": payload.get("model"),
+        "provider_created": payload.get("created"),
     }
 
 
@@ -129,6 +139,7 @@ def run_comparison(original, compressed, rows, model, key, endpoint):
         "method": "model-generated compression (LLMLingua-inspired, not LLMLingua)",
         "settings": {"temperature": 0, "max_tokens": 1024, "rows": len(rows)},
         "source_bytes": {"original": len(original.encode()), "compressed": len(compressed.encode())},
+        "source_sha256": {name: hashlib.sha256(text.encode()).hexdigest() for name, text in (("original", original), ("compressed", compressed))},
         "prompt_metrics": compression_metrics(original_tokens, compressed_tokens),
         "runs": results,
         "limitations": "Lexical marker recall is a transparent proxy, not semantic correctness. Review answers manually and use native DigitalOcean Evaluations as optional judge evidence.",
@@ -153,7 +164,9 @@ def main():
         parser.error("A DigitalOcean model access key is required.")
     result = run_comparison(Path(args.original).read_text(), Path(args.compressed).read_text(), load_dataset(args.dataset), args.model, key, args.endpoint)
     output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(json.dumps(result, indent=2) + "\n")
+    with output.open("x") as handle:
+        json.dump(result, handle, indent=2)
+        handle.write("\n")
     print(f"Saved {output}; fixed model={args.model}; prompt reduction={result['prompt_metrics']['prompt_token_reduction_ratio']:.1%}")
 
 

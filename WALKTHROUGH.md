@@ -36,6 +36,10 @@ The original matches the prepared source exactly. The compressed document is 2,1
 
 ## What comes next
 
+DigitalOcean Analyze now visibly shows real account telemetry: 10,068 input and 13,259 output tokens over the last seven days. A recent DeepSeek card shows 2,859 input and 3,158 output tokens. These are dashboard/account observations, not exclusively our benchmark. The observation is saved in `evaluation/results/digitalocean-observability.json`; no native judge evaluation has run.
+
+Future evaluator exports now include exact submitted messages, source SHA-256 hashes, UTC submission timestamps, provider model/response IDs, and a request ID when returned. Old results retain their original evidence and cannot retrospectively acquire missing IDs.
+
 Verify the account's actual usage and price → optionally compare in native Evaluations → decide whether a stronger semantic judge is needed → explain what was preserved or lost and what the calls actually cost.
 
 ## What we can honestly pitch today

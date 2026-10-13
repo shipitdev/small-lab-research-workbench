@@ -1,9 +1,23 @@
 import unittest
+import json
+from unittest.mock import patch
+from email.message import Message
 
-from run_eval import compression_metrics, score_answer
+from run_eval import _call, compression_metrics, score_answer
 
 
 class EvaluationMetricsTest(unittest.TestCase):
+    def test_request_provenance_excludes_credentials(self):
+        import io
+        response = io.BytesIO(json.dumps({"id": "response-1", "model": "fixed-model", "choices": [{"finish_reason": "stop", "message": {"content": "answer"}}], "usage": {"prompt_tokens": 10, "completion_tokens": 2}}).encode())
+        response.headers = Message()
+        response.headers["x-request-id"] = "request-1"
+        with patch("run_eval.request.urlopen", return_value=response):
+            result = _call("https://inference.do-ai.run/v1/chat/completions", "secret-test-key", "fixed-model", "instruction", "context", 1024)
+        self.assertEqual(result["provider_request_id"], "request-1")
+        self.assertEqual(result["request"]["messages"][1]["content"], "context")
+        self.assertNotIn("secret-test-key", json.dumps(result))
+
     def test_compression_metrics_use_model_prompt_tokens(self):
         result = compression_metrics(100, 60)
 

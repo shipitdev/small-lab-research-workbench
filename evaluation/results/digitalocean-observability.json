@@ -1,0 +1,15 @@
+{
+  "captured_at_utc": "2026-10-13T07:45:35.912245+00:00",
+  "source": "DigitalOcean Serverless Inference Analyze dashboard, visually observed",
+  "time_range": "Last 7 days",
+  "aggregate_input_tokens": 10068,
+  "aggregate_output_tokens": 13259,
+  "recent_model": "deepseek-v4.1-flash",
+  "recent_card_label": "Token Usage (60 min ago)",
+  "recent_input_tokens": 2859,
+  "recent_output_tokens": 3158,
+  "recent_total_tokens": 6016,
+  "attribution": "Account aggregates; not attributable exclusively to the ten-call benchmark",
+  "native_evaluation_status": "not run",
+  "automatic_dashboard_api_pull": false
+}

@@ -19,6 +19,8 @@ The script makes ten candidate calls: five questions against each context. It us
 
 ## What it measures
 
+Future runs also preserve the exact request body (without authorization headers), source hashes, UTC timestamps and provider identifiers. Existing results predate that capture improvement. Dashboard observations are saved separately in `results/digitalocean-observability.json` and represent account aggregates, not benchmark-only usage.
+
 - API-reported prompt-token counts for original and compressed contexts.
 - Prompt-token reduction and byte sizes.
 - Raw answers, latency and completion-token usage.
