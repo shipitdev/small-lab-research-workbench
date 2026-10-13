@@ -42,7 +42,7 @@ Docs: [Inference Router](https://docs.digitalocean.com/products/inference/how-to
 
 ## 4. Run the open-source fixed-model comparison — next
 
-Confirm the exact DeepSeek Flash model ID in the Model Catalog and ensure the model access key is scoped to it. The current catalog may show `deepseek-v4.1-flash` or another versioned slug; copy the ID from the account rather than guessing it.
+The exact model path `digitalocean/deepseek-v4.1-flash` has passed one short text-only OpenCode smoke test. That confirms access, not answer quality. The evaluator still needs a scoped model access key in its own process; never put the key in the repository or result JSON.
 
 From the repository root, run:
 

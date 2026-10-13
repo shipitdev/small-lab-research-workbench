@@ -23,6 +23,7 @@ A fictional lab compares two water sensors. Its notebook contains an early recom
 4. Loaded a synthetic research document without its held-out answer key.
 5. The agent created compressed.txt and compression-notes.md.
 6. Switched from the browser console to SSH. SSH now works. OpenCode lives at /root/.opencode/bin/opencode, so remote commands should use that full path.
+7. Ran one short text-only request through `digitalocean/deepseek-v4.1-flash`; it returned the expected response. This verifies model access, not research quality.
 
 ## Where we are now
 
@@ -34,7 +35,7 @@ The original matches the prepared source exactly. The compressed document is 2,1
 
 ## What comes next
 
-Confirm the exact DeepSeek model slug and access-key scope → run the same five questions against each archive → inspect the JSON and raw answers → optionally compare in native Evaluations → explain what was preserved or lost and what the calls actually cost.
+Pass a scoped model key to the evaluator process without saving it → run the same five questions against each archive → inspect the JSON and raw answers → optionally compare in native Evaluations → explain what was preserved or lost and what the calls actually cost.
 
 ## What we can honestly pitch today
 

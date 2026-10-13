@@ -24,7 +24,8 @@ Verification: local comparison and manual source review. Dependency: 1. Scope: i
 - [ ] Verify account access and current upload schema.
 - [x] Mapped five questions/references into `evaluation/riverwatch-eval.jsonl`; preview is still pending manual upload.
 - [x] Added `evaluation/run_eval.py` and offline tests for the open-source fixed-model comparison.
-- [ ] Confirm exact DeepSeek model slug, key scope, settings and prices before spending credits.
+- [x] Confirmed `digitalocean/deepseek-v4.1-flash` with one short text-only OpenCode smoke test; no benchmark result inferred.
+- [ ] Provide the evaluator process a scoped model access key without writing it to disk, then record settings and prices before the ten-call run.
 - [ ] Record native candidate, judge, settings, reference-aware metric and prices if the dashboard run is used.
 
 Verification: native dataset preview and configuration. Dependency: 2. Scope: evaluation dataset/settings.
