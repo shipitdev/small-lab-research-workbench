@@ -1,0 +1,27 @@
+SYNTHETIC HACKATHON DATA — not a real study, not evidence of real-world sensor performance.
+
+RiverWatch Lab: bench comparison of two low-cost turbidity sensors
+Record version: 2026-10-13. This archive concerns a fictional independent research group testing sensors before deciding whether to fund a larger field study.
+
+Study design
+The group tested Sensor A and Sensor B against a reference meter across 48 prepared water samples. There were 24 low-turbidity samples below 20 NTU and 24 high-turbidity samples from 20 through 100 NTU. Each sensor produced one reading per sample. The researchers used absolute error in NTU, not percentage error. They did not test drinking-water safety, pathogens, or chemical contamination.
+
+Initial notebook entry, 2026-10-04
+The first notebook entry reported that Sensor B had lower mean absolute error over all 48 samples and suggested selecting B for the field pilot. The entry used every reading, including readings later found to have been recorded during sensor warm-up. That recommendation was provisional.
+
+Quality-control correction, 2026-10-07
+For eight samples, both sensors had been measured before the required ten-minute warm-up had elapsed. The team excluded these eight samples from the corrected comparison, leaving 40 paired samples: 20 low-turbidity and 20 high-turbidity. The correction supersedes the initial recommendation for the overall bench comparison. The excluded readings remain in the raw archive but must not be counted in the corrected summary.
+
+Corrected results
+Across the 40 retained paired samples, Sensor A's mean absolute error was 3.1 NTU and Sensor B's was 4.0 NTU. Within the low-turbidity group, A's mean absolute error was 1.2 NTU and B's was 0.9 NTU. Within the high-turbidity group, A's mean absolute error was 5.0 NTU and B's was 7.1 NTU. The aggregate values are the arithmetic means of the equally sized low and high groups. These measurements describe this bench sample only. No confidence intervals or statistical significance tests were calculated.
+
+Decision memo, 2026-10-09
+For a general pilot spanning the tested range, the team prefers Sensor A because its corrected overall error is lower. For a pilot restricted to water below 20 NTU, Sensor B may still be preferable on accuracy. Neither recommendation applies above 100 NTU: the team collected no samples in that range. A recommendation based on the early, uncorrected notebook must disclose the warm-up issue.
+
+Deployment constraints
+The planned pilot requires a ten-minute warm-up before each measurement session. Sensor A draws 60 mA while measuring; Sensor B draws 45 mA. These are measurement-mode currents, not battery-life estimates. The archive contains no battery capacity, duty cycle, sleep current, operating voltage, or radio power measurements. The team cannot calculate total deployment battery life from this archive.
+
+The proposed field phase would collect samples at three sites for two weeks. It has not happened yet. The team must receive permission from each site owner before deployment. A draft purchasing note says order parts by 20 October, but the later approval memo sets the final purchasing deadline to 23 October, conditional on receiving all site permissions by 18 October. If permission arrives later, the memo says to defer purchasing until a revised schedule is approved.
+
+Research limitations
+The samples were prepared on a bench. Temperature effects, fouling, sensor drift over time, and field reliability have not been measured. The study cannot show that either sensor is reliable for continuous unattended deployment. The team's next step is to verify the corrected analysis, identify the missing measurements, and decide whether a field pilot is justified.

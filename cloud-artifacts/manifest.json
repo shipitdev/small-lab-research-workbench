@@ -1,0 +1,20 @@
+{
+  "status": "first compression recovered; native evaluations pending",
+  "method": "model-generated compression through OpenCode",
+  "operational_model": "digitalocean/router:general",
+  "selected_underlying_model": "unknown",
+  "original_bytes": 3743,
+  "compressed_bytes": 2177,
+  "byte_reduction_percent": 41.84,
+  "original_sha256": "63428fb738544f27848b5e25999f85e34c667ff1745c54865915bf50c368b2b7",
+  "compressed_sha256": "a727d7234e7887da44bdba41cde0ba527490a1d88f64a3240bb7fd8d79fbf46c",
+  "source_matches_prepared_file": true,
+  "token_counts": null,
+  "cost": null,
+  "quality_scores": null,
+  "review_findings": [
+    "Key corrected measurements, subgroup exception, conditional purchasing dates and missing battery evidence retained.",
+    "Source record date 2026-10-13 and initial-entry date 2026-10-04 omitted.",
+    "Agent notes incorrectly describe source record date as invented; retain raw notes and disclose this error."
+  ]
+}

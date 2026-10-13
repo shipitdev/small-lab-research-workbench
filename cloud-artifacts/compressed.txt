@@ -1,0 +1,25 @@
+SYNTHETIC HACKATHON DATA — fictional study, not evidence of real-world performance.
+
+RiverWatch Lab: two low-cost turbidity sensors vs reference meter.
+
+Design
+48 prepared samples: 24 low (<20 NTU), 24 high (20–100 NTU). One reading per sensor per sample. Metric: absolute error in NTU (not %). No drinking-water, pathogen, or chemical testing.
+
+Initial entry (provisional, superseded)
+Reported Sensor B lower mean absolute error over all samples; suggested piloting B. Used all readings, including those later flagged as warm-up.
+
+Correction 2026-10-07 (supersedes initial entry)
+8 samples with both sensors read before the 10-minute warm-up elapsed: excluded. Remaining: 40 paired samples (20 low, 20 high). Excluded readings stay raw but not in corrected summary.
+
+Corrected results (40 paired samples)
+Overall mean absolute error: A 3.1 NTU, B 4.0 NTU. Low group: A 1.2, B 0.9. High group: A 5.0, B 7.1. Aggregates = arithmetic means of equal low/high groups. Bench sample only. No confidence intervals / significance tests.
+
+Decision 2026-10-09
+General pilot over tested range: prefer A (lower corrected overall error). Pilot <20 NTU only: B may be preferable. Neither applies >100 NTU — no samples there. Any recommendation from the uncorrected entry must disclose the warm-up issue.
+
+Deployment
+Pilot requires 10-minute warm-up per session. Measuring currents: A 60 mA, B 45 mA (not battery-life estimates). Missing from archive: no battery capacity, duty cycle, sleep current, operating voltage, or radio power — total deployment battery life cannot be computed.
+Field phase (3 sites, 2 weeks, three sites permissions) not yet run; each site owner permission required first. Draft purchasing note says order by 20-Oct; approval memo sets final deadline 23-Oct, conditional on all site permissions by 18-Oct; later permission defers purchasing until a revised schedule is approved.
+
+Limits
+Bench samples only. Temperature, fouling, drift over time, field reliability not measured; cannot show either sensor is reliable for continuous unattended use. Next step: verify corrected analysis, identify missing measurements, decide whether a field pilot is justified.

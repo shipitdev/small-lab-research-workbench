@@ -1,0 +1,8 @@
+{
+  "source": "The following is a fictional research facility policy. Cedar Lab accepts experiment submissions Monday through Friday. Standard applications must arrive by 17:00 on Friday. A pilot experiment may run for up to 45 minutes. Researchers must save configurations, raw outputs, and dependency versions. The lab provides a shared workstation and a help desk. The help desk is located near the main entrance and is open during office hours. GPU jobs may not start until the supervisor approves the budget. An exception applies to approved accessibility projects: their submission deadline is Monday at 12:00, not Friday. All other requirements still apply. External collaborators may submit applications, but may not access private datasets. The lab newsletter is published monthly and includes interviews, seminar announcements, and equipment updates. The waiting area contains a notice board, chairs, and printed copies of previous newsletters.",
+  "questions": [
+    {"question": "What is the submission deadline for approved accessibility projects?", "reference": "Monday at 12:00."},
+    {"question": "Can external collaborators access private datasets?", "reference": "No."},
+    {"question": "What must happen before GPU jobs start?", "reference": "The supervisor must approve the budget."}
+  ]
+}
